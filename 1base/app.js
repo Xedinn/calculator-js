@@ -59,13 +59,12 @@ function printResult(result) {
 function computeNumbersWithAction (imp1, imp2, actionSymbol) {
 const num1 = Number(imp1.value)
 const num2 = Number(imp2.value)
-if (actionSymbol == '+') {
-    return num1 + num2
-}
-
-if (actionSymbol == '-') {
-    return num1 - num2
-}
+// if (actionSymbol == '+') {
+//     return num1 + num2
+// } else if (actionSymbol == '-') {
+//     return num1 - num2
+// }
+return actionSymbol == "+" ? num1 + num2 : num1 - num2
 }
 
 submitBtn.onclick = function () {
