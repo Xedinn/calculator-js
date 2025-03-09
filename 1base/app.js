@@ -47,16 +47,37 @@ minusBtn.onclick = function () {
     action = '-'
 }
 
-submitBtn.onclick = function () {
-
-    if (action == '+') {
-        const sum  = Number(input1.value) + Number(input2.value)
-        resultElement.textContent = sum 
+function printResult(result) {
+    if (result < 0) {
+        resultElement.style.color = 'red'
     } else {
-        const sum  = Number(input1.value) - Number(input2.value)
-        resultElement.textContent = sum 
+        resultElement.style.color = 'green'
     }
+    resultElement.textContent = result 
 }
 
+function computeNumbersWithAction (imp1, imp2, actionSymbol) {
+const num1 = Number(imp1.value)
+const num2 = Number(imp2.value)
+if (actionSymbol == '+') {
+    return num1 + num2
+}
 
+if (actionSymbol == '-') {
+    return num1 - num2
+}
+}
+
+submitBtn.onclick = function () {
+const result = computeNumbersWithAction(input1, input2, action)
+printResult(result)
+//     if (action == '+') {
+//         const sum  = Number(input1.value) + Number(input2.value)
+//         printResult(sum)
+//     } else {
+//         const sum  = Number(input1.value) - Number(input2.value)
+//         printResult(sum)
+// }
+
+}
     
