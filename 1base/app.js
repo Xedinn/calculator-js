@@ -1,8 +1,8 @@
-let num  = 42
-let firstName = 'Alexey'
-const isProgrammer = true
+// let num  = 42
+// let firstName = 'Alexey'
+// const isProgrammer = true
 
-alert (firstName)
+// alert (firstName)
 
 // console.log(firstName)
 // console.log(num + 10)   
