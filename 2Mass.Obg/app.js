@@ -57,3 +57,32 @@ function getNoteTemplate(title) {
         </li>
     `;
 }
+
+/**
+ * Object Theory
+
+// const person = {
+//     firstName: "Alexey",
+//     lastName: "Mironov",
+//     year: 1990,
+//     hasGilecopter: false,
+//     languages: ["ru", "en"],
+//     getFullName: function() {
+//         console.log(person.firstName);
+        
+//     }
+// }
+// console.log(person.year);
+// console.log(person['languages']);
+
+// const key = "hasGilecopter"
+// console.log(person[key])
+// person.hasGilecopter = true
+// console.log(person[key]);
+
+
+
+
+// console.log(typeof notes);
+
+ */
