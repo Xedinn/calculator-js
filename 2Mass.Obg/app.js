@@ -93,12 +93,10 @@ const notes = [
 ];
 
 function render() {
-  // for (let i = 0;i < notes.length; i++) {
-  //     listElement.insertAdjacentHTML("beforeend", getNoteTemplate(notes[i]))
+  listElement.innerHTML=""
+  for (let i = 0;i < notes.length; i++) {
+      listElement.insertAdjacentHTML("beforeend", getNoteTemplate(notes[i], i))
 
-  // }
-  for (let note of notes) {
-    listElement.insertAdjacentHTML("beforeend", getNoteTemplate(note));
   }
 }
 render();
@@ -111,21 +109,19 @@ const newNote = {
     title: inputElement.value,
     completed: false,
 }
-  listElement.insertAdjacentHTML(
-    "beforeend",
-    getNoteTemplate(newNote)
-  );
-  inputElement.value = "";
+notes.push(newNote)
+render()
+inputElement.value = ""
 };
 
-function getNoteTemplate(note) {
+function getNoteTemplate(note, index) {
   return `
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class = "${note.completed ? "text-decoration-line-through" : ""}">${note.title}</span> <!-- Текст заметки -->
-                  <span>
-                      <span class="btn btn-small btn-${note.completed ? "warning" : "success"}">&check;</span> <!-- Кнопка "Готово" -->
-                      <span class="btn btn-small btn-danger">&times;</span> <!-- Кнопка "Удалить" -->
-                  </span>
-              </li>
-          `;
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span class = "${note.completed ? "text-decoration-line-through" : ""}">${note.title}</span> <!-- Текст заметки -->
+        <span>
+            <span class="btn btn-small btn-${note.completed ? "warning" : "success"}" data-index="${index}">&check;</span> <!-- Кнопка "Готово" -->
+            <span class="btn btn-small btn-danger">&times;</span> <!-- Кнопка "Удалить" -->
+        </span>
+    </li>
+  `;
 }
